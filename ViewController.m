@@ -30,7 +30,7 @@ BOOL gameOver;
     self.fire.hidden = true;
     self.restartButton.hidden= true;
     //For ballImage
-    pos = CGPointMake(15, 35); //keep high value of Y to have ball go in vertical direction
+    pos = CGPointMake(15, 35); //keep value of Y to have ball go in vertical direction
     
     timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
     
@@ -97,7 +97,7 @@ BOOL gameOver;
         
     if (CGRectIntersectsRect(bouncyPadRect, ballImageRect)) //if CGRectIntersectRect is true
         {
-            pos.x = -(pos.x);
+            pos.x = -(pos.x)*2;
             pos.y = -(pos.y);
         }
     }
@@ -114,7 +114,7 @@ BOOL gameOver;
     self.restartButton.hidden= true;
     
     //For ballImage
-    pos = CGPointMake(15, 35.0); //keep value of Y to have ball go in vertical direction
+    pos = CGPointMake(14.0, 30.0); //keep value of Y to have ball go in vertical direction
     timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
     
     //For BouncyPad
