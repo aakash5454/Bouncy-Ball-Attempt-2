@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ballImage;
 @property (weak, nonatomic) IBOutlet UIImageView *bouncyPad;
 @property (weak, nonatomic) IBOutlet UIImageView *fire;
-@property (weak, nonatomic) IBOutlet UIButton *restartButton;
+
 @end
 
 CGPoint pos;
@@ -28,9 +28,9 @@ BOOL gameOver;
     [super viewDidLoad];
     
     self.fire.hidden = true;
-    self.restartButton.hidden= true;
+   
     //For ballImage
-    pos = CGPointMake(15, 35); //keep value of Y to have ball go in vertical direction
+    pos = CGPointMake(-14,-7); //keep value of Y to have ball go in vertical direction
     
     timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
     
@@ -46,7 +46,7 @@ BOOL gameOver;
     UIView *draggedView = padPanned.view;
     CGPoint offset = [padPanned translationInView:draggedView.superview];
     CGPoint center = draggedView.center;
-    draggedView.center = CGPointMake(center.x + offset.x, center.y + 0 ); //offset.y because you dont want to add the offset and keep the center.y same. It is the value that you have set from the story board.
+    draggedView.center = CGPointMake(center.x + offset.x, center.y ); //offset.y because you dont want to add the offset and keep the center.y same. It is the value that you have set from the story board.
     [padPanned setTranslation:CGPointZero inView:draggedView.superview];
     
 }
@@ -83,7 +83,6 @@ BOOL gameOver;
             gameOver = true;
             _fire.frame =  _ballImage.frame;
             self.fire.hidden = false;
-            self.restartButton.hidden = false; 
         
         }
         
@@ -97,7 +96,7 @@ BOOL gameOver;
         
     if (CGRectIntersectsRect(bouncyPadRect, ballImageRect)) //if CGRectIntersectRect is true
         {
-            pos.x = -(pos.x)*2;
+            pos.x = -(pos.x);
             pos.y = -(pos.y);
         }
     }
@@ -108,22 +107,7 @@ BOOL gameOver;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)restartButtonTapped:(id)sender {
 
-    self.fire.hidden = true;
-    self.restartButton.hidden= true;
-    
-    //For ballImage
-    pos = CGPointMake(14.0, 30.0); //keep value of Y to have ball go in vertical direction
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
-    
-    //For BouncyPad
-    [self.view addSubview:_bouncyPad];
-    _bouncyPad.userInteractionEnabled = YES;
-    UIPanGestureRecognizer *padPanned = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(bouncyPadTappedOrMoved:)];
-    [_bouncyPad addGestureRecognizer:padPanned];
-
-}
 
 
 @end
