@@ -20,7 +20,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-df-dIx">
                                 <rect key="frame" x="493" y="511" width="62" height="63"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BouncySurface" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-Pl-HOw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BouncySurface" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-Pl-HOw">
                                 <rect key="frame" x="99" y="453" width="158" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="9KF-KZ-fVM"/>
@@ -53,7 +53,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-PX-jCT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-PX-jCT">
                                 <rect key="frame" x="254" y="372" width="67" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="Gf1-BE-osi"/>
@@ -74,61 +74,61 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-mb-aJU">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-mb-aJU">
                                 <rect key="frame" x="22" y="206" width="555" height="189"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-Z6-TSB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-Z6-TSB">
                                         <rect key="frame" x="0.0" y="1" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="s7o-HA-Mqq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="s7o-HA-Mqq">
                                         <rect key="frame" x="92" y="1" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Vvl-Xu-c2U">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Vvl-Xu-c2U">
                                         <rect key="frame" x="184" y="1" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-nZ-B6j">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-nZ-B6j">
                                         <rect key="frame" x="276" y="1" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-C1-MsO">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-C1-MsO">
                                         <rect key="frame" x="0.0" y="65" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Ugb-Xe-fbz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Ugb-Xe-fbz">
                                         <rect key="frame" x="92" y="65" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="6cq-5r-QwK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="6cq-5r-QwK">
                                         <rect key="frame" x="184" y="65" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="yqk-av-PRq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="yqk-av-PRq">
                                         <rect key="frame" x="276" y="65" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="58r-hW-f54">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="58r-hW-f54">
                                         <rect key="frame" x="0.0" y="124" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="gtY-Jg-lPi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="gtY-Jg-lPi">
                                         <rect key="frame" x="92" y="124" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-MZ-zH6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-MZ-zH6">
                                         <rect key="frame" x="184" y="124" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="r0J-di-2NG">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="r0J-di-2NG">
                                         <rect key="frame" x="276" y="124" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="G9H-Fl-1QB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="G9H-Fl-1QB">
                                         <rect key="frame" x="369" y="0.0" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-Q1-XIX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-Q1-XIX">
                                         <rect key="frame" x="369" y="65" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="7DC-FA-XP5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="7DC-FA-XP5">
                                         <rect key="frame" x="369" y="124" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="ggx-ee-BDe">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="ggx-ee-BDe">
                                         <rect key="frame" x="462" y="0.0" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Xnx-ub-VbR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Xnx-ub-VbR">
                                         <rect key="frame" x="462" y="65" width="93" height="65"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" misplaced="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="7Zb-Vr-S4I">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="7Zb-Vr-S4I">
                                         <rect key="frame" x="462" y="124" width="93" height="65"/>
                                     </imageView>
                                 </subviews>
@@ -138,6 +138,8 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="3eh-lO-UGf"/>
                                     <constraint firstAttribute="height" constant="189" id="M0Y-1f-t8R"/>
                                     <constraint firstAttribute="width" constant="400" id="UPy-pL-Dly"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="189" id="et8-vw-gTF"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="jR8-An-X2H"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -145,6 +147,8 @@
                                         <exclude reference="3eh-lO-UGf"/>
                                         <exclude reference="M0Y-1f-t8R"/>
                                         <exclude reference="UPy-pL-Dly"/>
+                                        <exclude reference="et8-vw-gTF"/>
+                                        <exclude reference="jR8-An-X2H"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -153,6 +157,8 @@
                                         <include reference="3eh-lO-UGf"/>
                                         <include reference="M0Y-1f-t8R"/>
                                         <include reference="UPy-pL-Dly"/>
+                                        <include reference="et8-vw-gTF"/>
+                                        <include reference="jR8-An-X2H"/>
                                     </mask>
                                 </variation>
                             </view>
