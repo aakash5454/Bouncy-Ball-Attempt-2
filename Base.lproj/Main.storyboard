@@ -17,63 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-df-dIx">
-                                <rect key="frame" x="493" y="511" width="62" height="63"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BouncySurface" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-Pl-HOw">
-                                <rect key="frame" x="99" y="453" width="158" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="9KF-KZ-fVM"/>
-                                    <constraint firstAttribute="width" constant="158" id="Ffw-TH-yrN"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="158" id="UIN-9y-oEC"/>
-                                    <constraint firstAttribute="height" constant="26" id="ugi-hJ-aRf"/>
-                                    <constraint firstAttribute="height" constant="26" id="v7T-gi-RYK"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="vCc-CU-sH7"/>
-                                    <constraint firstAttribute="width" constant="158" id="vDx-d9-gjs"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="zoR-Om-Avt"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9KF-KZ-fVM"/>
-                                        <exclude reference="Ffw-TH-yrN"/>
-                                        <exclude reference="UIN-9y-oEC"/>
-                                        <exclude reference="v7T-gi-RYK"/>
-                                        <exclude reference="vCc-CU-sH7"/>
-                                        <exclude reference="zoR-Om-Avt"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="9KF-KZ-fVM"/>
-                                        <include reference="Ffw-TH-yrN"/>
-                                        <include reference="UIN-9y-oEC"/>
-                                        <include reference="v7T-gi-RYK"/>
-                                        <include reference="vCc-CU-sH7"/>
-                                        <include reference="zoR-Om-Avt"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-PX-jCT">
-                                <rect key="frame" x="254" y="372" width="67" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="Gf1-BE-osi"/>
-                                    <constraint firstAttribute="height" constant="60" id="Hii-QC-kJQ"/>
-                                    <constraint firstAttribute="width" constant="68" id="I46-c7-YVy"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Gf1-BE-osi"/>
-                                        <exclude reference="Hii-QC-kJQ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Gf1-BE-osi"/>
-                                        <include reference="Hii-QC-kJQ"/>
-                                        <exclude reference="I46-c7-YVy"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-mb-aJU">
                                 <rect key="frame" x="22" y="206" width="555" height="189"/>
                                 <subviews>
@@ -162,6 +105,63 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BouncySurface" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-Pl-HOw">
+                                <rect key="frame" x="99" y="453" width="158" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="9KF-KZ-fVM"/>
+                                    <constraint firstAttribute="width" constant="158" id="Ffw-TH-yrN"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="158" id="UIN-9y-oEC"/>
+                                    <constraint firstAttribute="height" constant="26" id="ugi-hJ-aRf"/>
+                                    <constraint firstAttribute="height" constant="26" id="v7T-gi-RYK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="vCc-CU-sH7"/>
+                                    <constraint firstAttribute="width" constant="158" id="vDx-d9-gjs"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="zoR-Om-Avt"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9KF-KZ-fVM"/>
+                                        <exclude reference="Ffw-TH-yrN"/>
+                                        <exclude reference="UIN-9y-oEC"/>
+                                        <exclude reference="v7T-gi-RYK"/>
+                                        <exclude reference="vCc-CU-sH7"/>
+                                        <exclude reference="zoR-Om-Avt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9KF-KZ-fVM"/>
+                                        <include reference="Ffw-TH-yrN"/>
+                                        <include reference="UIN-9y-oEC"/>
+                                        <include reference="v7T-gi-RYK"/>
+                                        <include reference="vCc-CU-sH7"/>
+                                        <include reference="zoR-Om-Avt"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-df-dIx">
+                                <rect key="frame" x="493" y="511" width="62" height="63"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-PX-jCT">
+                                <rect key="frame" x="254" y="372" width="67" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="Gf1-BE-osi"/>
+                                    <constraint firstAttribute="height" constant="60" id="Hii-QC-kJQ"/>
+                                    <constraint firstAttribute="width" constant="68" id="I46-c7-YVy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Gf1-BE-osi"/>
+                                        <exclude reference="Hii-QC-kJQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Gf1-BE-osi"/>
+                                        <include reference="Hii-QC-kJQ"/>
+                                        <exclude reference="I46-c7-YVy"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -226,12 +226,27 @@
                     <connections>
                         <outlet property="ballImage" destination="EAQ-PX-jCT" id="x25-Ir-yt1"/>
                         <outlet property="bouncyPad" destination="AWf-Pl-HOw" id="Dk1-Uh-ldz"/>
+                        <outlet property="brick1" destination="ewG-Z6-TSB" id="3H2-3K-Lor"/>
+                        <outlet property="brick10" destination="g9c-Q1-XIX" id="X6X-k7-zSJ"/>
+                        <outlet property="brick11" destination="58r-hW-f54" id="03v-Nc-AV4"/>
+                        <outlet property="brick12" destination="gtY-Jg-lPi" id="oAU-FA-NeN"/>
+                        <outlet property="brick13" destination="E8R-MZ-zH6" id="aQW-fU-kOY"/>
+                        <outlet property="brick14" destination="r0J-di-2NG" id="q3V-XD-xnD"/>
+                        <outlet property="brick15" destination="7DC-FA-XP5" id="NWq-ee-9aX"/>
+                        <outlet property="brick2" destination="s7o-HA-Mqq" id="Yjh-A9-R2f"/>
+                        <outlet property="brick3" destination="Vvl-Xu-c2U" id="P8J-ze-xEx"/>
+                        <outlet property="brick4" destination="SxJ-nZ-B6j" id="yIw-jy-BQb"/>
+                        <outlet property="brick5" destination="G9H-Fl-1QB" id="FYH-AD-Wcd"/>
+                        <outlet property="brick6" destination="LfR-C1-MsO" id="LaQ-VL-9Sk"/>
+                        <outlet property="brick7" destination="Ugb-Xe-fbz" id="AlL-O1-Re1"/>
+                        <outlet property="brick8" destination="6cq-5r-QwK" id="SX4-Qm-JDD"/>
+                        <outlet property="brick9" destination="yqk-av-PRq" id="Qwk-GU-ZKk"/>
                         <outlet property="fire" destination="nSL-df-dIx" id="NMQ-DK-WhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="-117"/>
+            <point key="canvasLocation" x="-45" y="-116"/>
         </scene>
     </scenes>
     <resources>
