@@ -509,6 +509,6 @@ else     if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick
     
 }
 */
-
+//making all into master branch and understanding github. 
     
 @end
