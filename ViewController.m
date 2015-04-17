@@ -11,10 +11,9 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *ballImage;
+@property (weak, nonatomic) IBOutlet UIImageView *bouncyBall;
 @property (weak, nonatomic) IBOutlet UIImageView *bouncyPad;
 @property (weak, nonatomic) IBOutlet UIImageView *fire;
-
 
 @property (weak, nonatomic) IBOutlet UIImageView *brick1;
 @property (weak, nonatomic) IBOutlet UIImageView *brick2;
@@ -31,11 +30,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *brick13;
 @property (weak, nonatomic) IBOutlet UIImageView *brick14;
 @property (weak, nonatomic) IBOutlet UIImageView *brick15;
+
 @property (weak, nonatomic) IBOutlet UIImageView *brick16;
 @property (weak, nonatomic) IBOutlet UIImageView *brick17;
 @property (weak, nonatomic) IBOutlet UIImageView *brick18;
-
-
 
 @end
 
@@ -43,6 +41,23 @@ CGPoint pos;
 NSTimer *timer;
 bool CGRectIntersectsRect(CGRect rect1, CGRect rect2);
 BOOL gameOver;
+
+BOOL brick1;
+BOOL brick2;
+BOOL brick3;
+BOOL brick4;
+BOOL brick5;
+BOOL brick6;
+BOOL brick7;
+BOOL brick8;
+BOOL brick9;
+BOOL brick10;
+BOOL brick11;
+BOOL brick12;
+BOOL brick13;
+BOOL brick14;
+BOOL brick15;
+
 
 @implementation ViewController
 
@@ -74,57 +89,41 @@ BOOL gameOver;
 -(void) moveBall
 {
     
-    NSLog(@"x co%f  ", _ballImage.center.x);
-    NSLog(@" y co %f", _ballImage.center.y);
-
-    
     if (!gameOver)  //if game is not over
     {
         //current position of ball = _ballImage.center.x from storborad & pos.x is seed value providede in viewDidLoad
         
         // They are added eachtime the Timer calls moveBall method & hence the ball keeps on moving in animation.
         
-        _ballImage.center = CGPointMake(_ballImage.center.x + pos.x,  _ballImage.center.y + pos.y);
+        _bouncyBall.center = CGPointMake(_bouncyBall.center.x + pos.x,  _bouncyBall.center.y + pos.y);
         
         //Added to get the screen bounds to make it work for all screen size.
         CGRect screenRect = [[UIScreen mainScreen]bounds];
         CGFloat screenWidth = screenRect.size.width;
         CGFloat screenHeight = screenRect.size.height;
 
-        if (_ballImage.center.x > screenWidth || _ballImage.center.x < 0)
+        if (_bouncyBall.center.x > screenWidth || _bouncyBall.center.x < 0)
             {
                 pos.x = -(pos.x);
-
-                
             }
         
-        //&
-        
-        if ( _ballImage.center.y < 0) //_ballImage.center.y > screenHeight ||
+        if ( _bouncyBall.center.y < 0) //_ballImage.center.y > screenHeight ||
             {
                 pos.y = -(pos.y);
-
             }
         
-        if (_ballImage.center.y > screenHeight-30) //game over, ball is missed
+//--->  //game over, when ball is missed
+        if (_bouncyBall.center.y > screenHeight-30)
         {
             gameOver = true;
-            _fire.center = _ballImage.center;
-
-
+            _fire.center = _bouncyBall.center;
             self.fire.hidden = false;
-            self.ballImage.hidden=true;
-        
+            self.bouncyBall.hidden=true;
         }
         
-        
-       // bool CGRectIntersectsRect(CGRect rect1, CGRect rect2);
-        
-//--->    //When bouncyPad and Ball collide, keep this
-        
-        // CGSize bouncyPadSize = _ballImage.image.size;
+//--->  //When bouncyPad and Ball collide, keep this
         CGRect bouncyPadRect = _bouncyPad.frame;
-        CGRect ballImageRect = _ballImage.frame;
+        CGRect ballImageRect = _bouncyBall.frame;
         
 
     if (CGRectIntersectsRect(bouncyPadRect, ballImageRect)) //if CGRectIntersectRect is true
@@ -134,35 +133,12 @@ BOOL gameOver;
 
             NSLog(@"  x position %f",pos.x);
             NSLog(@"  y position %f",pos.y);
-
-            
-            
-
         }
-    
+        
         [self onBrickCollision];
-        
-//        
-//        [self detetingTheBrickOnCollision1];
-//        [self detetingTheBrickOnCollision2];
-//        [self detetingTheBrickOnCollision3];
-//        [self detetingTheBrickOnCollision4];
-//        [self detetingTheBrickOnCollision5];
-//        [self detetingTheBrickOnCollision6];
-//        [self detetingTheBrickOnCollision7];
-//        [self detetingTheBrickOnCollision8];
-//        [self detetingTheBrickOnCollision9];
-//        [self detetingTheBrickOnCollision10];
-//        [self detetingTheBrickOnCollision11];
-//        [self detetingTheBrickOnCollision12];
-//        [self detetingTheBrickOnCollision13];
-//        [self detetingTheBrickOnCollision14];
-//        [self detetingTheBrickOnCollision15];
-//        [self detetingTheBrickOnCollision16];
-//        [self detetingTheBrickOnCollision17];
-//        [self detetingTheBrickOnCollision18];
+        NSLog(@"x co %f", _bouncyBall.center.x);
+        NSLog(@"y co %f", _bouncyBall.center.y);
 
-        
     }
 }
 
@@ -173,343 +149,170 @@ BOOL gameOver;
 
 #pragma mark- onBrickCollision
 -(void) onBrickCollision {
-
-    if (CGRectIntersectsRect(_ballImage.frame, _brick1.frame) && self.brick1.hidden==false) //if CGRectIntersectRect is true
+        NSLog(@"10 value before %d", self.brick10.hidden);
+    //brick1
+    if (CGRectIntersectsRect(_bouncyBall.frame, _brick1.frame) && self.brick1.hidden==false) //if CGRectIntersectRect is true
     {
     pos.x = -(pos.x);
     pos.y = -(pos.y);
     self.brick1.hidden = true;
+    brick1 = true;
     }
-    
-    else if (CGRectIntersectsRect(_ballImage.frame, _brick2.frame) && self.brick2.hidden==false) //if CGRectIntersectRect is true
+
+    //brick2
+    else if (CGRectIntersectsRect(_bouncyBall.frame, _brick2.frame) && self.brick2.hidden==false) //if CGRectIntersectRect is true
     
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick2.hidden = true;
+        brick2 = true;
     }
     
-    else if (CGRectIntersectsRect(_ballImage.frame, _brick3.frame) && self.brick3.hidden==false) //if CGRectIntersectRect is true
-    {
-     
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick3.hidden = true;
-    }
-    
-    else  if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick4.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick4.hidden = true;
-
-    }
-    
-    else if (CGRectIntersectsRect(_ballImage.frame, _brick5.frame) && self.brick5.hidden==false) //if CGRectIntersectRect is true
-    {
-     
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick5.hidden = true;
-    }
-
-    
-    else if (CGRectIntersectsRect(_ballImage.frame, _brick6.frame) && self.brick6.hidden==false) //if CGRectIntersectRect is true
-    {
-
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick6.hidden = true;
-    }
-    
-    
-   else  if (CGRectIntersectsRect(_ballImage.frame, _brick7.frame) && self.brick7.hidden==false) //if CGRectIntersectRect is true
-    {
-
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick7.hidden = true;
-    }
-    
-    
-   else  if (CGRectIntersectsRect(_ballImage.frame, _brick8.frame) && self.brick8.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick8.hidden = true;
-
-    }
-    
-   else  if (CGRectIntersectsRect(_ballImage.frame, _brick9.frame) && self.brick9.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick9.hidden = true;
-
-    }
-    
-    
-   else  if (CGRectIntersectsRect(_ballImage.frame, _brick10.frame) && self.brick10.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick10.hidden = true;
-
-    }
-    
-   else   if (CGRectIntersectsRect(_ballImage.frame, _brick11.frame) && self.brick11.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick11.hidden = true;
-        return;
-    }
-    
-   else  if (CGRectIntersectsRect(_ballImage.frame, _brick12.frame) && self.brick12.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick12.hidden = true;
-    }
-    
-   else  if (CGRectIntersectsRect(_ballImage.frame, _brick13.frame) && self.brick13.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick13.hidden = true;
-    }
-    
-    
-   else  if (CGRectIntersectsRect(_ballImage.frame, _brick14.frame) && self.brick14.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick14.hidden = true;
-    }
-    
-   else if (CGRectIntersectsRect(_ballImage.frame, _brick15.frame) && self.brick15.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick15.hidden = true;
-    }
-}
-/*
-- (void) detetingTheBrickOnCollision1
-{
- 
-    if (CGRectIntersectsRect(_ballImage.frame, _brick1.frame)) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick1.hidden = true;
-    }
-}
-
-- (void) detetingTheBrickOnCollision2
-{
- 
-    if (CGRectIntersectsRect(_ballImage.frame, _brick2.frame)) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick2.hidden = true;
-    }
- 
-}
-
-- (void) detetingTheBrickOnCollision3
-{
- 
-    if (CGRectIntersectsRect(_ballImage.frame, _brick3.frame)) //if CGRectIntersectRect is true
+    //brick3
+    else if (CGRectIntersectsRect(_bouncyBall.frame, _brick3.frame) && self.brick3.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick3.hidden = true;
+        brick3 = true;
     }
     
-}
-
-- (void) detetingTheBrickOnCollision4
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame)) //if CGRectIntersectRect is true
+    //brick4
+    else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick4.frame) && self.brick4.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick4.hidden = true;
+        brick4 = true;
+
     }
     
-}
-
-- (void) detetingTheBrickOnCollision5
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick5.frame)) //if CGRectIntersectRect is true
+    //brick5
+    else if (CGRectIntersectsRect(_bouncyBall.frame, _brick5.frame) && self.brick5.hidden==false) //if CGRectIntersectRect is true
     {
+
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick5.hidden = true;
+        brick5 = true;
+
     }
     
-}
-
-- (void) detetingTheBrickOnCollision6
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick6.frame)) //if CGRectIntersectRect is true
+    //brick6
+    else if (CGRectIntersectsRect(_bouncyBall.frame, _brick6.frame) && self.brick6.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick6.hidden = true;
+        brick6 = true;
     }
-    
-}
-
-- (void) detetingTheBrickOnCollision7
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick7.frame)) //if CGRectIntersectRect is true
+   
+   //brick7
+   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick7.frame) && self.brick7.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick7.hidden = true;
+        brick7 = true;
     }
-    
-}
-
-- (void) detetingTheBrickOnCollision8
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick8.frame)) //if CGRectIntersectRect is true
+   
+   //brick8
+   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick8.frame) && self.brick8.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick8.hidden = true;
+        brick8 = true;
     }
     
-}
-
-- (void) detetingTheBrickOnCollision9
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick9.frame)) //if CGRectIntersectRect is true
+   //brick9
+   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick9.frame) && self.brick9.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick9.hidden = true;
+        brick9 = true;
     }
-    
-}
 
-
-
-- (void) detetingTheBrickOnCollision10
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick10.frame)) //if CGRectIntersectRect is true
+   //brick10
+   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick10.frame) && self.brick10.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick10.hidden = true;
+        brick10 = true;
+        NSLog(@"10 value after %d", self.brick10.hidden);
     }
-    
-}
 
- 
-- (void) detetingTheBrickOnCollision11
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick11.frame)) //if CGRectIntersectRect is true
+    //brick11
+   else   if (CGRectIntersectsRect(_bouncyBall.frame, _brick11.frame) && self.brick11.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick11.hidden = true;
+        brick11 = true;
     }
     
-}
-- (void) detetingTheBrickOnCollision12
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick12.frame)) //if CGRectIntersectRect is true
+   //brick12
+   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick12.frame) && self.brick12.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick12.hidden = true;
+        brick12 = true;
     }
-    
-}
-- (void) detetingTheBrickOnCollision13
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick13.frame)) //if CGRectIntersectRect is true
+
+    //brick13
+   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick13.frame) && self.brick13.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick13.hidden = true;
+        brick13 = true;
     }
     
-}
-
-- (void) detetingTheBrickOnCollision14
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick14.frame)) //if CGRectIntersectRect is true
+   //brick14
+   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick14.frame) && self.brick14.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick14.hidden = true;
+        brick14 = true;
     }
     
-}
-
-- (void) detetingTheBrickOnCollision15
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick15.frame)) //if CGRectIntersectRect is true
+   //brick15    
+   else if (CGRectIntersectsRect(_bouncyBall.frame, _brick15.frame) && self.brick15.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick15.hidden = true;
+        brick15 = true;
     }
     
+    if (brick1 == true && brick2 == true && brick3 == true && brick4 == true && brick5 == true && brick6 == true && brick7 == true && brick8 == true && brick9 == true && brick10 == true && brick11 == true && brick12 == true && brick13 == true && brick14 == true && brick15 == true)
+    {
+        gameOver = true;
+    }
+         NSLog(@"15 value %d", self.brick15.hidden);
+         NSLog(@"14 value %d", self.brick14.hidden);
+         NSLog(@"13 value %d", self.brick13.hidden);
+         NSLog(@"12 value %d", self.brick12.hidden);
+         NSLog(@"11 value %d", self.brick11.hidden);
+         NSLog(@"10 value %d", self.brick10.hidden);
+         NSLog(@"9 value %d", self.brick9.hidden);
+         NSLog(@"8 value %d", self.brick8.hidden);
+         NSLog(@"7 value %d", self.brick7.hidden);
+         NSLog(@"6 value %d", self.brick6.hidden);
+         NSLog(@"5 value %d", self.brick5.hidden);
+         NSLog(@"4 value %d", self.brick4.hidden);
+         NSLog(@"3 value %d", self.brick3.hidden);
+         NSLog(@"2 value %d", self.brick2.hidden);
+         NSLog(@"1 value %d", self.brick1.hidden);
+         NSLog(@"gameover value %d", gameOver);
 }
 
-- (void) detetingTheBrickOnCollision16
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick16.frame)) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick16.hidden = true;
-    }
-    
-}
 
-    - (void) detetingTheBrickOnCollision17
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick17.frame)) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick17.hidden = true;
-    }
-    
-}
-- (void) detetingTheBrickOnCollision18
-{
-    
-    if (CGRectIntersectsRect(_ballImage.frame, _brick18.frame)) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick18.hidden = true;
-    }
-    
-}
-*/
 //making all into master branch and understanding github.
     
 @end
