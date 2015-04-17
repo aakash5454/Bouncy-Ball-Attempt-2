@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bouncyPad;
 @property (weak, nonatomic) IBOutlet UIImageView *fire;
 
+@property (strong, nonatomic) AudioController *audioController;
+
 @property (weak, nonatomic) IBOutlet UIImageView *brick1;
 @property (weak, nonatomic) IBOutlet UIImageView *brick2;
 @property (weak, nonatomic) IBOutlet UIImageView *brick3;
@@ -77,6 +79,10 @@ BOOL brick15;
     _bouncyPad.userInteractionEnabled = YES;
     UIPanGestureRecognizer *padPanned = [[UIPanGestureRecognizer alloc]initWithTarget:self  action:@selector(bouncyPadTappedOrMoved:)];
     [_bouncyPad addGestureRecognizer:padPanned];
+    
+    //To Play Background Music
+   self.audioController = [[AudioController alloc] init];
+    [self.audioController tryPlayMusic];
 }
 
 - (void) bouncyPadTappedOrMoved: (UIPanGestureRecognizer *) padPanned
@@ -120,6 +126,8 @@ BOOL brick15;
             self.fire.hidden = false;
             self.bouncyBall.hidden=true;
             
+            [self.audioController playShotGunFireSound];
+            
             //You Lose Alert
             NSString *message = @"Try again?";
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"And the ball is on Fire!" message:message preferredStyle:UIAlertControllerStyleAlert];
@@ -141,7 +149,9 @@ BOOL brick15;
         {
            // pos.x = -(pos.x);
             pos.y = -(pos.y);
-
+            
+            
+            
           //  NSLog(@"  x position %f",pos.x);
           //  NSLog(@"  y position %f",pos.y);
         }
@@ -160,6 +170,9 @@ BOOL brick15;
 
 #pragma mark- onBrickCollision
 -(void) onBrickCollision {
+    
+   // self.audioController = [[AudioController alloc] init];
+    
 
     //brick1
     if (CGRectIntersectsRect(_bouncyBall.frame, _brick1.frame) && self.brick1.hidden==false) //if CGRectIntersectRect is true
@@ -168,7 +181,8 @@ BOOL brick15;
     pos.y = -(pos.y);
     self.brick1.hidden = true;
     brick1 = true;
-         NSLog(@"1 value %d", self.brick1.hidden);
+    NSLog(@"1 value %d", self.brick1.hidden);
+    [self.audioController playSystemSound];
     }
 
     //brick2
@@ -179,7 +193,8 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick2.hidden = true;
         brick2 = true;
-         NSLog(@"2 value %d", self.brick2.hidden);
+        NSLog(@"2 value %d", self.brick2.hidden);
+        [self.audioController playSystemSound];
     }
     
     //brick3
@@ -189,7 +204,8 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick3.hidden = true;
         brick3 = true;
-         NSLog(@"3 value %d", self.brick3.hidden);
+        NSLog(@"3 value %d", self.brick3.hidden);
+        [self.audioController playSystemSound];
     }
     
     //brick4
@@ -200,6 +216,7 @@ BOOL brick15;
         self.brick4.hidden = true;
         brick4 = true;
         NSLog(@"4 value %d", self.brick4.hidden);
+        [self.audioController playSystemSound];
     }
     
 //    //brick5
@@ -220,7 +237,8 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick6.hidden = true;
         brick6 = true;
-         NSLog(@"6 value %d", self.brick6.hidden);
+        NSLog(@"6 value %d", self.brick6.hidden);
+        [self.audioController playSystemSound];
     }
    
    //brick7
@@ -230,7 +248,8 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick7.hidden = true;
         brick7 = true;
-         NSLog(@"7 value %d", self.brick7.hidden);
+        NSLog(@"7 value %d", self.brick7.hidden);
+        [self.audioController playSystemSound];
     }
    
    //brick8
@@ -241,6 +260,7 @@ BOOL brick15;
         self.brick8.hidden = true;
         brick8 = true;
         NSLog(@"8 value %d", self.brick8.hidden);
+        [self.audioController playSystemSound];
     }
     
    //brick9
@@ -251,6 +271,7 @@ BOOL brick15;
         self.brick9.hidden = true;
         brick9 = true;
         NSLog(@"9 value %d", self.brick9.hidden);
+        [self.audioController playSystemSound];
     }
 
 //   //brick10
@@ -272,6 +293,7 @@ BOOL brick15;
         self.brick11.hidden = true;
         brick11 = true;
          NSLog(@"11 value %d", self.brick11.hidden);
+       [self.audioController playSystemSound];
     }
     
    //brick12
@@ -281,7 +303,8 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick12.hidden = true;
         brick12 = true;
-         NSLog(@"12 value %d", self.brick12.hidden);
+        NSLog(@"12 value %d", self.brick12.hidden);
+        [self.audioController playSystemSound];
     }
 
     //brick13
@@ -292,6 +315,7 @@ BOOL brick15;
         self.brick13.hidden = true;
         brick13 = true;
          NSLog(@"13 value %d", self.brick13.hidden);
+       [self.audioController playSystemSound];
     }
     
    //brick14
@@ -302,6 +326,7 @@ BOOL brick15;
         self.brick14.hidden = true;
         brick14 = true;
         NSLog(@"14 value %d", self.brick14.hidden);
+        [self.audioController playSystemSound];
     }
     
 //   //brick15    
