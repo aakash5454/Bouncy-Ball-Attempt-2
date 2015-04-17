@@ -108,20 +108,36 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BouncySurface" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-Pl-HOw">
                                 <rect key="frame" x="99" y="453" width="158" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="9KF-KZ-fVM"/>
-                                    <constraint firstAttribute="width" constant="158" id="Ffw-TH-yrN"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="8Hg-3M-ZDr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="9KF-KZ-fVM">
+                                        <variation key="widthClass=compact" constant="100"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="158" id="Ffw-TH-yrN">
+                                        <variation key="widthClass=compact" constant="100"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="18" id="JBL-wT-cIK"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="158" id="UIN-9y-oEC"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="Vhv-rm-twB"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="o8X-St-Vxw"/>
                                     <constraint firstAttribute="height" constant="26" id="ugi-hJ-aRf"/>
                                     <constraint firstAttribute="height" constant="26" id="v7T-gi-RYK"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="vCc-CU-sH7"/>
-                                    <constraint firstAttribute="width" constant="158" id="vDx-d9-gjs"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="vCc-CU-sH7">
+                                        <variation key="widthClass=compact" constant="19"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="158" id="vDx-d9-gjs">
+                                        <variation key="widthClass=compact" constant="100"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="zoR-Om-Avt"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="8Hg-3M-ZDr"/>
                                         <exclude reference="9KF-KZ-fVM"/>
                                         <exclude reference="Ffw-TH-yrN"/>
+                                        <exclude reference="JBL-wT-cIK"/>
                                         <exclude reference="UIN-9y-oEC"/>
+                                        <exclude reference="Vhv-rm-twB"/>
+                                        <exclude reference="o8X-St-Vxw"/>
                                         <exclude reference="v7T-gi-RYK"/>
                                         <exclude reference="vCc-CU-sH7"/>
                                         <exclude reference="zoR-Om-Avt"/>
@@ -129,51 +145,79 @@
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
+                                        <include reference="8Hg-3M-ZDr"/>
                                         <include reference="9KF-KZ-fVM"/>
                                         <include reference="Ffw-TH-yrN"/>
+                                        <exclude reference="JBL-wT-cIK"/>
                                         <include reference="UIN-9y-oEC"/>
-                                        <include reference="v7T-gi-RYK"/>
+                                        <include reference="Vhv-rm-twB"/>
+                                        <include reference="o8X-St-Vxw"/>
+                                        <exclude reference="ugi-hJ-aRf"/>
+                                        <exclude reference="v7T-gi-RYK"/>
                                         <include reference="vCc-CU-sH7"/>
                                         <include reference="zoR-Om-Avt"/>
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-df-dIx">
-                                <rect key="frame" x="493" y="511" width="62" height="63"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1fireWhiteBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-df-dIx">
+                                <rect key="frame" x="268" y="135" width="62" height="63"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="328" y="527" width="56" height="53"/>
+                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-PX-jCT">
                                 <rect key="frame" x="254" y="372" width="67" height="79"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="Gf1-BE-osi"/>
-                                    <constraint firstAttribute="height" constant="60" id="Hii-QC-kJQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="AIq-tg-1SW"/>
+                                    <constraint firstAttribute="width" constant="67" id="Gf1-BE-osi">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="60" id="Hii-QC-kJQ">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="68" id="I46-c7-YVy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="31" id="wxm-6F-Yxh">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="AIq-tg-1SW"/>
                                         <exclude reference="Gf1-BE-osi"/>
                                         <exclude reference="Hii-QC-kJQ"/>
+                                        <exclude reference="wxm-6F-Yxh"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
+                                        <include reference="AIq-tg-1SW"/>
                                         <include reference="Gf1-BE-osi"/>
                                         <include reference="Hii-QC-kJQ"/>
                                         <exclude reference="I46-c7-YVy"/>
+                                        <include reference="wxm-6F-Yxh"/>
                                     </mask>
                                 </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWf-Pl-HOw" secondAttribute="bottom" constant="63" id="2GB-mP-6xO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWf-Pl-HOw" secondAttribute="bottom" constant="63" id="2GB-mP-6xO">
+                                <variation key="widthClass=compact" constant="70"/>
+                            </constraint>
                             <constraint firstItem="GA1-mb-aJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="5AX-gM-XcZ"/>
                             <constraint firstAttribute="centerX" secondItem="GA1-mb-aJU" secondAttribute="centerX" id="6BT-oH-2n9"/>
-                            <constraint firstItem="EAQ-PX-jCT" firstAttribute="top" secondItem="GA1-mb-aJU" secondAttribute="bottom" constant="221" id="8DO-AE-pXg"/>
+                            <constraint firstItem="EAQ-PX-jCT" firstAttribute="top" secondItem="GA1-mb-aJU" secondAttribute="bottom" constant="221" id="8DO-AE-pXg">
+                                <variation key="widthClass=compact" constant="13"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="AWf-Pl-HOw" secondAttribute="centerX" id="ARg-de-nng"/>
-                            <constraint firstItem="EAQ-PX-jCT" firstAttribute="top" secondItem="GA1-mb-aJU" secondAttribute="bottom" constant="221" id="EC0-HK-3Wn"/>
+                            <constraint firstItem="EAQ-PX-jCT" firstAttribute="top" secondItem="GA1-mb-aJU" secondAttribute="bottom" constant="221" id="EC0-HK-3Wn">
+                                <variation key="widthClass=compact" constant="13"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="AWf-Pl-HOw" secondAttribute="centerX" id="EtL-CT-KqJ"/>
                             <constraint firstAttribute="centerY" secondItem="GA1-mb-aJU" secondAttribute="centerY" constant="166.5" id="H22-7h-7Z0"/>
-                            <constraint firstItem="AWf-Pl-HOw" firstAttribute="top" secondItem="EAQ-PX-jCT" secondAttribute="bottom" constant="2" id="Ptu-V2-WC0"/>
+                            <constraint firstItem="AWf-Pl-HOw" firstAttribute="top" secondItem="EAQ-PX-jCT" secondAttribute="bottom" constant="2" id="Ptu-V2-WC0">
+                                <variation key="widthClass=compact" constant="240"/>
+                            </constraint>
                             <constraint firstItem="AWf-Pl-HOw" firstAttribute="top" secondItem="GA1-mb-aJU" secondAttribute="bottom" constant="283" id="Q9V-36-LYT"/>
                             <constraint firstItem="EAQ-PX-jCT" firstAttribute="centerX" secondItem="AWf-Pl-HOw" secondAttribute="centerX" constant="0.5" id="Zre-F1-o6a"/>
                             <constraint firstItem="GA1-mb-aJU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="c6g-LB-IBt"/>
@@ -250,9 +294,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1fireWhiteBackGround" width="202" height="249"/>
         <image name="Ball" width="600" height="600"/>
         <image name="BouncySurface" width="551" height="91"/>
         <image name="brick" width="532" height="400"/>
-        <image name="fire" width="425" height="282"/>
     </resources>
 </document>

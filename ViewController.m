@@ -50,11 +50,11 @@ BOOL gameOver;
     [super viewDidLoad];
     
     self.fire.hidden = true;
-   
-    //For ballImage
-    pos = CGPointMake(-14,-17); //keep value of Y to have ball go in vertical direction
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
+    //For ballImage
+    pos = CGPointMake(10,10); //increase the value of Y to have ball go in vertical direction
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
     
     //For BouncyPad
     [self.view addSubview:_bouncyPad];
@@ -68,13 +68,16 @@ BOOL gameOver;
     UIView *draggedView = padPanned.view;
     CGPoint offset = [padPanned translationInView:draggedView.superview];
     CGPoint center = draggedView.center;
-    draggedView.center = CGPointMake(center.x + offset.x, center.y ); //offset.y because you dont want to add the offset and keep the center.y same. It is the value that you have set from the story board.
+    draggedView.center = CGPointMake(center.x + offset.x, center.y ); //offset.y :because you dont want to add the offset and keep the center.y same. It is the value that you have set from the story board.
     [padPanned setTranslation:CGPointZero inView:draggedView.superview];
-    
 }
 -(void) moveBall
 {
+    
+    NSLog(@"x co%f  ", _ballImage.center.x);
+    NSLog(@" y co %f", _ballImage.center.y);
 
+    
     if (!gameOver)  //if game is not over
     {
         //current position of ball = _ballImage.center.x from storborad & pos.x is seed value providede in viewDidLoad
@@ -91,6 +94,8 @@ BOOL gameOver;
         if (_ballImage.center.x > screenWidth || _ballImage.center.x < 0)
             {
                 pos.x = -(pos.x);
+
+                
             }
         
         //&
@@ -98,34 +103,44 @@ BOOL gameOver;
         if ( _ballImage.center.y < 0) //_ballImage.center.y > screenHeight ||
             {
                 pos.y = -(pos.y);
+
             }
         
-        if (_ballImage.center.y > screenHeight) //game over, ball is missed
+        if (_ballImage.center.y > screenHeight-30) //game over, ball is missed
         {
             gameOver = true;
-            _fire.frame =  _ballImage.frame;
+            _fire.center = _ballImage.center;
+
+
             self.fire.hidden = false;
+            self.ballImage.hidden=true;
         
         }
+        
+        
+       // bool CGRectIntersectsRect(CGRect rect1, CGRect rect2);
+        
+//--->    //When bouncyPad and Ball collide, keep this
         
         // CGSize bouncyPadSize = _ballImage.image.size;
         CGRect bouncyPadRect = _bouncyPad.frame;
         CGRect ballImageRect = _ballImage.frame;
         
-        
-       // bool CGRectIntersectsRect(CGRect rect1, CGRect rect2);
-        
-    //When bouncyPad and Ball collide keep this
+
     if (CGRectIntersectsRect(bouncyPadRect, ballImageRect)) //if CGRectIntersectRect is true
         {
-            pos.x = -(pos.x);
+           // pos.x = -(pos.x);
             pos.y = -(pos.y);
+
+            NSLog(@"  x position %f",pos.x);
+            NSLog(@"  y position %f",pos.y);
+
+            
+            
+
         }
     
-        [self collissionCheck];
-        
-//New chabge:
-        
+        [self onBrickCollision];
         
 //        
 //        [self detetingTheBrickOnCollision1];
@@ -156,21 +171,15 @@ BOOL gameOver;
     // Dispose of any resources that can be recreated.
 }
 
--(void) collissionCheck {
-
-
+#pragma mark- onBrickCollision
+-(void) onBrickCollision {
 
     if (CGRectIntersectsRect(_ballImage.frame, _brick1.frame) && self.brick1.hidden==false) //if CGRectIntersectRect is true
-    
     {
-        
     pos.x = -(pos.x);
     pos.y = -(pos.y);
     self.brick1.hidden = true;
     }
-    
-    
-    
     
     else if (CGRectIntersectsRect(_ballImage.frame, _brick2.frame) && self.brick2.hidden==false) //if CGRectIntersectRect is true
     
@@ -180,7 +189,6 @@ BOOL gameOver;
         self.brick2.hidden = true;
     }
     
-    
     else if (CGRectIntersectsRect(_ballImage.frame, _brick3.frame) && self.brick3.hidden==false) //if CGRectIntersectRect is true
     {
      
@@ -188,10 +196,8 @@ BOOL gameOver;
         pos.y = -(pos.y);
         self.brick3.hidden = true;
     }
-
     
-    
-else     if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick4.hidden==false) //if CGRectIntersectRect is true
+    else  if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick4.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
@@ -251,7 +257,7 @@ else     if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick
 
     }
     
-  else   if (CGRectIntersectsRect(_ballImage.frame, _brick11.frame) && self.brick11.hidden==false) //if CGRectIntersectRect is true
+   else   if (CGRectIntersectsRect(_ballImage.frame, _brick11.frame) && self.brick11.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
@@ -265,7 +271,6 @@ else     if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick
         pos.y = -(pos.y);
         self.brick12.hidden = true;
     }
-    
     
    else  if (CGRectIntersectsRect(_ballImage.frame, _brick13.frame) && self.brick13.hidden==false) //if CGRectIntersectRect is true
     {
@@ -282,16 +287,12 @@ else     if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick
         self.brick14.hidden = true;
     }
     
-    
-    
    else if (CGRectIntersectsRect(_ballImage.frame, _brick15.frame) && self.brick15.hidden==false) //if CGRectIntersectRect is true
     {
         pos.x = -(pos.x);
         pos.y = -(pos.y);
         self.brick15.hidden = true;
     }
-    
-
 }
 /*
 - (void) detetingTheBrickOnCollision1
@@ -509,6 +510,6 @@ else     if (CGRectIntersectsRect(_ballImage.frame, _brick4.frame) && self.brick
     
 }
 */
-//making all into master branch and understanding github. 
+//making all into master branch and understanding github.
     
 @end
