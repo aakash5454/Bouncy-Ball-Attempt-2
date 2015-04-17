@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *bouncyBall;
@@ -88,7 +89,6 @@ BOOL brick15;
 }
 -(void) moveBall
 {
-    
     if (!gameOver)  //if game is not over
     {
         //current position of ball = _ballImage.center.x from storborad & pos.x is seed value providede in viewDidLoad
@@ -119,6 +119,17 @@ BOOL brick15;
             _fire.center = _bouncyBall.center;
             self.fire.hidden = false;
             self.bouncyBall.hidden=true;
+            
+            //You Lose Alert
+            NSString *message = @"Try again?";
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"And the ball is on Fire!" message:message preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+
         }
         
 //--->  //When bouncyPad and Ball collide, keep this
@@ -131,13 +142,13 @@ BOOL brick15;
            // pos.x = -(pos.x);
             pos.y = -(pos.y);
 
-            NSLog(@"  x position %f",pos.x);
-            NSLog(@"  y position %f",pos.y);
+          //  NSLog(@"  x position %f",pos.x);
+          //  NSLog(@"  y position %f",pos.y);
         }
         
         [self onBrickCollision];
-        NSLog(@"x co %f", _bouncyBall.center.x);
-        NSLog(@"y co %f", _bouncyBall.center.y);
+       // NSLog(@"x co %f", _bouncyBall.center.x);
+       //NSLog(@"y co %f", _bouncyBall.center.y);
 
     }
 }
@@ -149,7 +160,7 @@ BOOL brick15;
 
 #pragma mark- onBrickCollision
 -(void) onBrickCollision {
-        NSLog(@"10 value before %d", self.brick10.hidden);
+
     //brick1
     if (CGRectIntersectsRect(_bouncyBall.frame, _brick1.frame) && self.brick1.hidden==false) //if CGRectIntersectRect is true
     {
@@ -157,6 +168,7 @@ BOOL brick15;
     pos.y = -(pos.y);
     self.brick1.hidden = true;
     brick1 = true;
+         NSLog(@"1 value %d", self.brick1.hidden);
     }
 
     //brick2
@@ -167,6 +179,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick2.hidden = true;
         brick2 = true;
+         NSLog(@"2 value %d", self.brick2.hidden);
     }
     
     //brick3
@@ -176,6 +189,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick3.hidden = true;
         brick3 = true;
+         NSLog(@"3 value %d", self.brick3.hidden);
     }
     
     //brick4
@@ -185,19 +199,19 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick4.hidden = true;
         brick4 = true;
-
+        NSLog(@"4 value %d", self.brick4.hidden);
     }
     
-    //brick5
-    else if (CGRectIntersectsRect(_bouncyBall.frame, _brick5.frame) && self.brick5.hidden==false) //if CGRectIntersectRect is true
-    {
-
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick5.hidden = true;
-        brick5 = true;
-
-    }
+//    //brick5
+//    else if (CGRectIntersectsRect(_bouncyBall.frame, _brick5.frame) && self.brick5.hidden==false) //if CGRectIntersectRect is true
+//    {
+//
+//        pos.x = -(pos.x);
+//        pos.y = -(pos.y);
+//        self.brick5.hidden = true;
+//        brick5 = true;
+//         NSLog(@"5 value %d", self.brick5.hidden);
+//    }
     
     //brick6
     else if (CGRectIntersectsRect(_bouncyBall.frame, _brick6.frame) && self.brick6.hidden==false) //if CGRectIntersectRect is true
@@ -206,6 +220,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick6.hidden = true;
         brick6 = true;
+         NSLog(@"6 value %d", self.brick6.hidden);
     }
    
    //brick7
@@ -215,6 +230,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick7.hidden = true;
         brick7 = true;
+         NSLog(@"7 value %d", self.brick7.hidden);
     }
    
    //brick8
@@ -224,6 +240,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick8.hidden = true;
         brick8 = true;
+        NSLog(@"8 value %d", self.brick8.hidden);
     }
     
    //brick9
@@ -233,17 +250,19 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick9.hidden = true;
         brick9 = true;
+        NSLog(@"9 value %d", self.brick9.hidden);
     }
 
-   //brick10
-   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick10.frame) && self.brick10.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick10.hidden = true;
-        brick10 = true;
-        NSLog(@"10 value after %d", self.brick10.hidden);
-    }
+//   //brick10
+//   else  if (CGRectIntersectsRect(_bouncyBall.frame, _brick10.frame) && self.brick10.hidden==false) //if CGRectIntersectRect is true
+//    {
+//        pos.x = -(pos.x);
+//        pos.y = -(pos.y);
+//        
+//        self.brick10.hidden = true;
+//        brick10 = true;
+//         NSLog(@"10 value %d", self.brick10.hidden);
+//    }
 
     //brick11
    else   if (CGRectIntersectsRect(_bouncyBall.frame, _brick11.frame) && self.brick11.hidden==false) //if CGRectIntersectRect is true
@@ -252,6 +271,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick11.hidden = true;
         brick11 = true;
+         NSLog(@"11 value %d", self.brick11.hidden);
     }
     
    //brick12
@@ -261,6 +281,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick12.hidden = true;
         brick12 = true;
+         NSLog(@"12 value %d", self.brick12.hidden);
     }
 
     //brick13
@@ -270,6 +291,7 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick13.hidden = true;
         brick13 = true;
+         NSLog(@"13 value %d", self.brick13.hidden);
     }
     
    //brick14
@@ -279,37 +301,51 @@ BOOL brick15;
         pos.y = -(pos.y);
         self.brick14.hidden = true;
         brick14 = true;
+        NSLog(@"14 value %d", self.brick14.hidden);
     }
     
-   //brick15    
-   else if (CGRectIntersectsRect(_bouncyBall.frame, _brick15.frame) && self.brick15.hidden==false) //if CGRectIntersectRect is true
-    {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        self.brick15.hidden = true;
-        brick15 = true;
-    }
+//   //brick15    
+//   else if (CGRectIntersectsRect(_bouncyBall.frame, _brick15.frame) && self.brick15.hidden==false) //if CGRectIntersectRect is true
+//    {
+//        pos.x = -(pos.x);
+//        pos.y = -(pos.y);
+//        self.brick15.hidden = true;
+//        brick15 = true;
+//        NSLog(@"15 value %d", self.brick15.hidden);
+//    }
     
-    if (brick1 == true && brick2 == true && brick3 == true && brick4 == true && brick5 == true && brick6 == true && brick7 == true && brick8 == true && brick9 == true && brick10 == true && brick11 == true && brick12 == true && brick13 == true && brick14 == true && brick15 == true)
+    if (brick1 == true && brick2 == true && brick3 == true && brick4 == true  && brick6 == true && brick7 == true && brick8 == true && brick9 == true  && brick11 == true && brick12 == true && brick13 == true && brick14 == true )//&& brick15 == true && brick5 == true && brick10 == true)
     {
         gameOver = true;
+        NSLog(@"gameover value %d", gameOver);
+        
+        //Code for You Win Alert
+        NSString *message = @"Congratulations you are a champion";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"You Win!" message:message preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        
     }
-         NSLog(@"15 value %d", self.brick15.hidden);
-         NSLog(@"14 value %d", self.brick14.hidden);
-         NSLog(@"13 value %d", self.brick13.hidden);
-         NSLog(@"12 value %d", self.brick12.hidden);
-         NSLog(@"11 value %d", self.brick11.hidden);
-         NSLog(@"10 value %d", self.brick10.hidden);
-         NSLog(@"9 value %d", self.brick9.hidden);
-         NSLog(@"8 value %d", self.brick8.hidden);
-         NSLog(@"7 value %d", self.brick7.hidden);
-         NSLog(@"6 value %d", self.brick6.hidden);
-         NSLog(@"5 value %d", self.brick5.hidden);
-         NSLog(@"4 value %d", self.brick4.hidden);
-         NSLog(@"3 value %d", self.brick3.hidden);
-         NSLog(@"2 value %d", self.brick2.hidden);
-         NSLog(@"1 value %d", self.brick1.hidden);
-         NSLog(@"gameover value %d", gameOver);
+
+
+
+      //   NSLog(@"gameover value everytimme %d", gameOver);
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
