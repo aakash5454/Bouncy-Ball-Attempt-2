@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F7905249-D80E-41C6-93D7-B3529B15CEFE</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DC2FD3733C0D4A85414582E1C913AB9C58DA1FAA</key>
+		<string>https://github.com/skypirate/Bouncy-Ball-Attempt-2.git</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DC2FD3733C0D4A85414582E1C913AB9C58DA1FAA</key>
+		<string>Bouncy%20Ball%20Attempt%202/</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/skypirate/Bouncy-Ball-Attempt-2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DC2FD3733C0D4A85414582E1C913AB9C58DA1FAA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC2FD3733C0D4A85414582E1C913AB9C58DA1FAA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Bouncy%20Ball%20Attempt%202</string>
+		</dict>
+	</array>
+</dict>
+</plist>
