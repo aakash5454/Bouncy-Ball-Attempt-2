@@ -273,6 +273,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="BallOnFire" destination="nSL-df-dIx" id="hf5-PK-gLd"/>
                         <outlet property="bouncyBall" destination="EAQ-PX-jCT" id="3gu-UB-43u"/>
                         <outlet property="bouncyPad" destination="AWf-Pl-HOw" id="Dk1-Uh-ldz"/>
                         <outlet property="brick1" destination="ewG-Z6-TSB" id="3H2-3K-Lor"/>
@@ -290,7 +291,6 @@
                         <outlet property="brick7" destination="Ugb-Xe-fbz" id="AlL-O1-Re1"/>
                         <outlet property="brick8" destination="6cq-5r-QwK" id="SX4-Qm-JDD"/>
                         <outlet property="brick9" destination="yqk-av-PRq" id="Qwk-GU-ZKk"/>
-                        <outlet property="fire" destination="nSL-df-dIx" id="NMQ-DK-WhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *bouncyBall;
 @property (weak, nonatomic) IBOutlet UIImageView *bouncyPad;
-@property (weak, nonatomic) IBOutlet UIImageView *fire;
+@property (weak, nonatomic) IBOutlet UIImageView *BallOnFire;
 
 @property (strong, nonatomic) AudioController *audioController;
 
@@ -66,9 +66,32 @@ BOOL brick15;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.fire.hidden = true;
-    
+    [self restartGame];
+//    self.BallOnFire.hidden = true;
+//    
+//    //For ballImage
+//    pos = CGPointMake(10,10); //increase the value of Y to have ball go in vertical direction
+//    
+//    timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
+//    
+//    //For BouncyPad
+//    [self.view addSubview:_bouncyPad];
+//    _bouncyPad.userInteractionEnabled = YES;
+//    UIPanGestureRecognizer *padPanned = [[UIPanGestureRecognizer alloc]initWithTarget:self  action:@selector(bouncyPadTappedOrMoved:)];
+//    [_bouncyPad addGestureRecognizer:padPanned];
+//    
+//    //To Play Background Music
+//   self.audioController = [[AudioController alloc] init];
+//    [self.audioController tryPlayMusic];
+}
+
+-(void)restartGame
+{
+    self.BallOnFire.hidden = true;
+    self.bouncyBall.hidden =false;
+    [timer invalidate];
+    timer = nil; 
+    gameOver = false; 
     //For ballImage
     pos = CGPointMake(10,10); //increase the value of Y to have ball go in vertical direction
     
@@ -81,8 +104,28 @@ BOOL brick15;
     [_bouncyPad addGestureRecognizer:padPanned];
     
     //To Play Background Music
-   self.audioController = [[AudioController alloc] init];
+    self.audioController = [[AudioController alloc] init];
     [self.audioController tryPlayMusic];
+    
+    //Make sure all Bricks are visible
+    self.brick1.hidden = false;
+    self.brick2.hidden = false;
+    self.brick3.hidden = false;
+    self.brick4.hidden = false;
+//    self.brick5.hidden = false;
+    self.brick6.hidden = false;
+    self.brick7.hidden = false;
+    self.brick8.hidden = false;
+    self.brick9.hidden = false;
+//    self.brick10.hidden = false;
+    self.brick11.hidden = false;
+    self.brick12.hidden = false;
+    self.brick13.hidden = false;
+    self.brick14.hidden = false;
+//    self.brick15.hidden = false;
+//    self.brick16.hidden = false;
+//    self.brick17.hidden = false;
+//    self.brick18.hidden = false;
 }
 
 - (void) bouncyPadTappedOrMoved: (UIPanGestureRecognizer *) padPanned
@@ -93,6 +136,7 @@ BOOL brick15;
     draggedView.center = CGPointMake(center.x + offset.x, center.y ); //offset.y :because you dont want to add the offset and keep the center.y same. It is the value that you have set from the story board.
     [padPanned setTranslation:CGPointZero inView:draggedView.superview];
 }
+
 -(void) moveBall
 {
     if (!gameOver)  //if game is not over
@@ -122,18 +166,20 @@ BOOL brick15;
         if (_bouncyBall.center.y > screenHeight-30)
         {
             gameOver = true;
-            _fire.center = _bouncyBall.center;
-            self.fire.hidden = false;
+            _BallOnFire.center = _bouncyBall.center;
+            self.BallOnFire.hidden = false;
             self.bouncyBall.hidden=true;
             
             [self.audioController playShotGunFireSound];
-            
+    
             //You Lose Alert
             NSString *message = @"Try again?";
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"And the ball is on Fire!" message:message preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"You Lose!" message:message preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
+                                                                  handler:^(UIAlertAction * action) {
+                                                                      [self restartGame];
+                                                                  }];
             
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
@@ -150,8 +196,6 @@ BOOL brick15;
            // pos.x = -(pos.x);
             pos.y = -(pos.y);
             
-            
-            
           //  NSLog(@"  x position %f",pos.x);
           //  NSLog(@"  y position %f",pos.y);
         }
@@ -163,6 +207,7 @@ BOOL brick15;
     }
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -171,9 +216,6 @@ BOOL brick15;
 #pragma mark- onBrickCollision
 -(void) onBrickCollision {
     
-   // self.audioController = [[AudioController alloc] init];
-    
-
     //brick1
     if (CGRectIntersectsRect(_bouncyBall.frame, _brick1.frame) && self.brick1.hidden==false) //if CGRectIntersectRect is true
     {
@@ -356,24 +398,6 @@ BOOL brick15;
         
     }
 
-
-
-      //   NSLog(@"gameover value everytimme %d", gameOver);
-
-
-
-    //Added comment.
-
-
-
-
-
-
-
-
 }
 
-
-//making all into master branch and understanding github.
-    
 @end
