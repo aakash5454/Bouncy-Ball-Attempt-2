@@ -7,8 +7,6 @@
 // 
 
 #import "ViewController.h"
-#import "AppDelegate.h"
-
 
 @interface ViewController ()
 
@@ -17,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *BallOnFire;
 
 @property (strong, nonatomic) AudioController *audioController;
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *brick;
+@property (strong, atomic) IBOutletCollection(UIImageView) NSArray *brick;
 
 @end
 
@@ -58,10 +56,9 @@ BOOL brick;
     self.audioController = [[AudioController alloc] init];
     [self.audioController tryPlayMusic];
     
-//    //Make sure all Bricks are visible
+   //Make sure all Bricks are visible
 
-//    self.brick.hidden = no;
-    
+   //self.brick.hidden = NO;
 }
 
 - (void) bouncyPadTappedOrMoved: (UIPanGestureRecognizer *) padPanned
@@ -148,6 +145,7 @@ BOOL brick;
                pos.y = -(pos.y);
         }
         [self onBrickCollision];
+      
     }
 }
 
@@ -161,19 +159,24 @@ BOOL brick;
 {
 
     for (UIImageView *brick in self.brick)
-    if (CGRectIntersectsRect(_bouncyBall.frame, brick.frame) && brick.hidden==false) //if CGRectIntersectRect is true
     {
-        pos.x = -(pos.x);
-        pos.y = -(pos.y);
-        brick.hidden = true;
-        NSLog(@"1 value %d", brick.hidden);
-        [self.audioController playSystemSound];
+
+    if (CGRectIntersectsRect(_bouncyBall.frame, brick.frame) && brick.hidden==false) //if CGRectIntersectRect is true
+        {
+
+            pos.x = -(pos.x);
+            pos.y = -(pos.y);
+            brick.hidden = true;
+          //  NSLog(@"value bla: %d", brick.hidden);
+            NSLog(@"Hidden brick is: %d",brick.tag);
+            [self.audioController playSystemSound];
+        }
     }
     
-    if (brick == true)
+    if (gameOver == true)
     {
-        gameOver = true;
-        NSLog(@"gameover value %d", gameOver);
+       // gameOver = true;
+       // NSLog(@"gameover value %d", gameOver);
         
         //Code for You Win Alert
         NSString *message = @"Congratulations you are a champion";
