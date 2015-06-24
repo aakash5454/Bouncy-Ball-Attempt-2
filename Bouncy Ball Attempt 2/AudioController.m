@@ -51,13 +51,22 @@
      self.backgroundMusicPlaying = YES;
 }
 
+//The Background Music
 - (void)playSystemSound {
     AudioServicesPlaySystemSound(self.pewPewSound);
 }
 
+//When the user LOSES
 - (void)playShotGunFireSound {
     AudioServicesPlaySystemSound(self.shotGunFire);
 }
+
+//When the user WINS
+- (void)playYouWonSound{
+    AudioServicesPlaySystemSound(self.shotGunFire);
+}
+
+//When the user WINS
 
 #pragma mark - Private
 

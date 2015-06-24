@@ -14,5 +14,6 @@
 - (void)tryPlayMusic;
 - (void)playSystemSound;
 - (void)playShotGunFireSound;
+- (void)playYouWonSound;
 
 @end

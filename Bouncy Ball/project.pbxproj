@@ -55,6 +55,7 @@
 		33723E3D1AE1BB52009866F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		33723E411AE1BF56009866F2 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-music-aac.caf"; path = "Bouncy Ball Attempt 2/background-music-aac.caf"; sourceTree = "<group>"; };
 		33723E441AE1C274009866F2 /* shot-Gun-Fire.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "shot-Gun-Fire.caf"; sourceTree = "<group>"; };
+		337C8BFE1AE6F692007E0296 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +114,7 @@
 				33723E331AE19A7C009866F2 /* AudioController.h */,
 				33723E341AE19A7C009866F2 /* AudioController.m */,
 				330095C91ADDAD5900B47472 /* Supporting Files */,
+				337C8BFE1AE6F692007E0296 /* MyPlayground.playground */,
 			);
 			path = "Bouncy Ball Attempt 2";
 			sourceTree = "<group>";
@@ -209,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 330095C11ADDAD5900B47472 /* Build configuration list for PBXProject "Bouncy Ball Attempt 2" */;
+			buildConfigurationList = 330095C11ADDAD5900B47472 /* Build configuration list for PBXProject "Bouncy Ball" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -440,7 +442,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		330095C11ADDAD5900B47472 /* Build configuration list for PBXProject "Bouncy Ball Attempt 2" */ = {
+		330095C11ADDAD5900B47472 /* Build configuration list for PBXProject "Bouncy Ball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				330095E71ADDAD5900B47472 /* Debug */,
