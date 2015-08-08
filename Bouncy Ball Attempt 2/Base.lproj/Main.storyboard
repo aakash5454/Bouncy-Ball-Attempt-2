@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,204 +16,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BouncySurface" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-Pl-HOw">
-                                <rect key="frame" x="99" y="453" width="158" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="BkG-KZ-bW7"/>
-                                    <constraint firstAttribute="height" constant="15" id="P67-RA-Ldh"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="BkG-KZ-bW7"/>
-                                        <exclude reference="P67-RA-Ldh"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="BkG-KZ-bW7"/>
-                                        <include reference="P67-RA-Ldh"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-mb-aJU">
-                                <rect key="frame" x="22" y="206" width="555" height="189"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-mb-aJU">
+                                <rect key="frame" x="0.0" y="28" width="600" height="190"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-Z6-TSB">
-                                        <rect key="frame" x="0.0" y="1" width="93" height="65"/>
+                                        <rect key="frame" x="0.0" y="1" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="s7o-HA-Mqq">
-                                        <rect key="frame" x="92" y="1" width="93" height="65"/>
+                                        <rect key="frame" x="100" y="1" width="100" height="65"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="92" y="1" width="93" height="65"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Vvl-Xu-c2U">
-                                        <rect key="frame" x="184" y="1" width="93" height="65"/>
+                                        <rect key="frame" x="200" y="1" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-nZ-B6j">
-                                        <rect key="frame" x="276" y="1" width="93" height="65"/>
+                                        <rect key="frame" x="300" y="1" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-C1-MsO">
-                                        <rect key="frame" x="0.0" y="65" width="93" height="65"/>
+                                        <rect key="frame" x="0.0" y="65" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Ugb-Xe-fbz">
-                                        <rect key="frame" x="92" y="65" width="93" height="65"/>
+                                        <rect key="frame" x="100" y="65" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="6cq-5r-QwK">
-                                        <rect key="frame" x="184" y="65" width="93" height="65"/>
+                                        <rect key="frame" x="200" y="65" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="yqk-av-PRq">
-                                        <rect key="frame" x="276" y="65" width="93" height="65"/>
+                                        <rect key="frame" x="300" y="65" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="58r-hW-f54">
-                                        <rect key="frame" x="0.0" y="124" width="93" height="65"/>
+                                        <rect key="frame" x="0.0" y="124" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="gtY-Jg-lPi">
-                                        <rect key="frame" x="92" y="124" width="93" height="65"/>
+                                        <rect key="frame" x="100" y="124" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-MZ-zH6">
-                                        <rect key="frame" x="184" y="124" width="93" height="65"/>
+                                        <rect key="frame" x="200" y="124" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="r0J-di-2NG">
-                                        <rect key="frame" x="276" y="124" width="93" height="65"/>
+                                        <rect key="frame" x="300" y="124" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="G9H-Fl-1QB">
-                                        <rect key="frame" x="369" y="0.0" width="93" height="65"/>
+                                        <rect key="frame" x="400" y="0.0" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-Q1-XIX">
-                                        <rect key="frame" x="369" y="65" width="93" height="65"/>
+                                        <rect key="frame" x="399" y="65" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="7DC-FA-XP5">
-                                        <rect key="frame" x="369" y="124" width="93" height="65"/>
+                                        <rect key="frame" x="399" y="124" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="ggx-ee-BDe">
-                                        <rect key="frame" x="462" y="0.0" width="93" height="65"/>
+                                        <rect key="frame" x="499" y="0.0" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="Xnx-ub-VbR">
-                                        <rect key="frame" x="462" y="65" width="93" height="65"/>
+                                        <rect key="frame" x="499" y="65" width="100" height="65"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" image="brick" translatesAutoresizingMaskIntoConstraints="NO" id="7Zb-Vr-S4I">
-                                        <rect key="frame" x="462" y="124" width="93" height="65"/>
+                                        <rect key="frame" x="499" y="124" width="100" height="65"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="189" id="2mi-83-hzd"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="3eh-lO-UGf"/>
-                                    <constraint firstAttribute="height" constant="189" id="M0Y-1f-t8R"/>
-                                    <constraint firstAttribute="width" constant="400" id="UPy-pL-Dly"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="189" id="et8-vw-gTF"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="jR8-An-X2H"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2mi-83-hzd"/>
-                                        <exclude reference="3eh-lO-UGf"/>
-                                        <exclude reference="M0Y-1f-t8R"/>
-                                        <exclude reference="UPy-pL-Dly"/>
-                                        <exclude reference="et8-vw-gTF"/>
-                                        <exclude reference="jR8-An-X2H"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="2mi-83-hzd"/>
-                                        <include reference="3eh-lO-UGf"/>
-                                        <include reference="M0Y-1f-t8R"/>
-                                        <include reference="UPy-pL-Dly"/>
-                                        <include reference="et8-vw-gTF"/>
-                                        <include reference="jR8-An-X2H"/>
-                                    </mask>
-                                </variation>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-PX-jCT">
-                                <rect key="frame" x="254" y="372" width="67" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="I46-c7-YVy"/>
-                                    <constraint firstAttribute="height" constant="30" id="PV9-k2-dcG"/>
-                                    <constraint firstAttribute="width" constant="30" id="qHE-mL-C6v"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="PV9-k2-dcG"/>
-                                        <exclude reference="qHE-mL-C6v"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="I46-c7-YVy"/>
-                                        <include reference="PV9-k2-dcG"/>
-                                        <include reference="qHE-mL-C6v"/>
-                                    </mask>
-                                </variation>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-PX-jCT">
+                                <rect key="frame" x="266" y="279" width="68" height="80"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1fireWhiteBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-df-dIx">
-                                <rect key="frame" x="268" y="135" width="62" height="63"/>
+                                <rect key="frame" x="269" y="517" width="62" height="63"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="328" y="359" width="56" height="53"/>
                                 </variation>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BouncySurface" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-Pl-HOw">
+                                <rect key="frame" x="221" y="451" width="158" height="26"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="GA1-mb-aJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="5AX-gM-XcZ"/>
-                            <constraint firstAttribute="centerX" secondItem="GA1-mb-aJU" secondAttribute="centerX" id="6BT-oH-2n9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EAQ-PX-jCT" secondAttribute="trailing" constant="169" id="DN2-c4-7vH"/>
-                            <constraint firstAttribute="centerY" secondItem="GA1-mb-aJU" secondAttribute="centerY" constant="166.5" id="H22-7h-7Z0"/>
-                            <constraint firstItem="AWf-Pl-HOw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="156" id="N4o-M5-WZx">
-                                <variation key="widthClass=compact" constant="155"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="AWf-Pl-HOw" secondAttribute="trailing" constant="152" id="Rov-UU-Gt5">
-                                <variation key="widthClass=compact" constant="153"/>
-                            </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWf-Pl-HOw" secondAttribute="bottom" constant="66" id="WFl-Lg-Ag8"/>
-                            <constraint firstAttribute="centerY" secondItem="AWf-Pl-HOw" secondAttribute="centerY" constant="-226.5" id="Wbg-Ct-TYv"/>
-                            <constraint firstItem="GA1-mb-aJU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="c6g-LB-IBt"/>
-                            <constraint firstItem="EAQ-PX-jCT" firstAttribute="top" secondItem="GA1-mb-aJU" secondAttribute="bottom" constant="11" id="d0W-nY-WE0"/>
-                            <constraint firstItem="GA1-mb-aJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="gv2-5W-IQt"/>
-                            <constraint firstItem="GA1-mb-aJU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="hUF-i6-KSV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GA1-mb-aJU" secondAttribute="trailing" constant="16" id="iLD-h0-Ag7"/>
-                            <constraint firstItem="EAQ-PX-jCT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="169" id="kCw-gZ-S4N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GA1-mb-aJU" secondAttribute="trailing" constant="-16" id="oRv-zQ-Wfb"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5AX-gM-XcZ"/>
-                                <exclude reference="6BT-oH-2n9"/>
-                                <exclude reference="H22-7h-7Z0"/>
-                                <exclude reference="c6g-LB-IBt"/>
-                                <exclude reference="gv2-5W-IQt"/>
-                                <exclude reference="hUF-i6-KSV"/>
-                                <exclude reference="iLD-h0-Ag7"/>
-                                <exclude reference="oRv-zQ-Wfb"/>
-                                <exclude reference="DN2-c4-7vH"/>
-                                <exclude reference="d0W-nY-WE0"/>
-                                <exclude reference="kCw-gZ-S4N"/>
-                                <exclude reference="N4o-M5-WZx"/>
-                                <exclude reference="Rov-UU-Gt5"/>
-                                <exclude reference="Wbg-Ct-TYv"/>
-                                <exclude reference="WFl-Lg-Ag8"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="5AX-gM-XcZ"/>
-                                <include reference="6BT-oH-2n9"/>
-                                <include reference="H22-7h-7Z0"/>
-                                <include reference="c6g-LB-IBt"/>
-                                <exclude reference="gv2-5W-IQt"/>
-                                <include reference="hUF-i6-KSV"/>
-                                <exclude reference="iLD-h0-Ag7"/>
-                                <include reference="oRv-zQ-Wfb"/>
-                                <include reference="DN2-c4-7vH"/>
-                                <include reference="d0W-nY-WE0"/>
-                                <include reference="kCw-gZ-S4N"/>
-                                <include reference="N4o-M5-WZx"/>
-                                <include reference="Rov-UU-Gt5"/>
-                                <include reference="Wbg-Ct-TYv"/>
-                                <include reference="WFl-Lg-Ag8"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="BallOnFire" destination="nSL-df-dIx" id="hf5-PK-gLd"/>
@@ -239,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="-123"/>
+            <point key="canvasLocation" x="113" y="-291"/>
         </scene>
     </scenes>
     <resources>
