@@ -168,8 +168,9 @@ BOOL brick;
             pos.y = -(pos.y);
             brick.hidden = true;
           //  NSLog(@"value bla: %d", brick.hidden);
-            NSLog(@"Hidden brick is: %d",brick.tag);
+            NSLog(@"Hidden brick is: %ld",(long)brick.tag);
             [self.audioController playSystemSound];
+
         }
     }
     
